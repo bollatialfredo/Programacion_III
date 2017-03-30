@@ -1,0 +1,25 @@
+
+public class Pila {
+	private Lista lista = new Lista();
+	
+	public Pila(){
+		
+	}
+	public int verTope(){
+		if(!lista.vacio()){
+			return lista.elementoEnPos(0);
+		}
+		return -1;
+	}
+	public void apilar(int v){
+		lista.agregar(v);
+	}
+	public int desapilar(){
+		int val = lista.elementoEnPos(lista.tamanio()-1);
+		lista.eliminar(lista.tamanio()-1);
+		return val;
+	}
+	public boolean estaVacia(){
+		return lista.vacio();
+	}
+}

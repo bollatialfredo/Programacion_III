@@ -1,0 +1,17 @@
+
+public class Nodo {
+	private Nodo siguiente;
+	private int valor;
+	
+	public Nodo(int v){
+		valor = v;
+	}
+	
+	public int getValor(){
+		return valor;
+	}
+	
+	public Nodo getSiguiente(){
+		return siguiente;
+	}
+}

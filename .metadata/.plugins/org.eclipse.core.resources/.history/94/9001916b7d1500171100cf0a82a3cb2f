@@ -1,0 +1,38 @@
+
+public class Lista {
+	private Nodo raiz;
+	private int indice = 0;
+	
+	public Lista(){
+		
+	}
+	public void agregar(int v){
+		if(raiz == null){
+			raiz = new Nodo(v);
+		}else{
+			Nodo tmp =  new Nodo(v);
+			tmp.setSiguiente(raiz);
+			raiz = tmp;
+		}
+		indice++;
+	}
+	
+	public boolean vacio () {
+		return raiz == null;
+	}
+	
+	
+	public int elementoEnPos(int pos){
+		Nodo nodoActual = raiz;
+		while(nodoActual != null){
+			if (pos == 1) {
+				Nodo temp = nodoActual.getSiguiente();
+				nodoActual.setSiguiente(temp.getSiguiente());
+				return temp.getValor();
+			}
+			pos --;
+			nodoActual = nodoActual.getSiguiente();
+		}
+		return -1;
+	}
+}
