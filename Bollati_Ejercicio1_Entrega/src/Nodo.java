@@ -14,7 +14,6 @@ public class Nodo {
 	public void setSiguiente(Nodo n){
 		siguiente = n;
 	}
-	
 	public Nodo getSiguiente(){
 		return siguiente;
 	}

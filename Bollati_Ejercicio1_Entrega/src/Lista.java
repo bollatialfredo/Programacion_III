@@ -6,6 +6,7 @@ public class Lista {
 	public Lista(){
 		
 	}
+	
 	public void agregar(int v){
 		if(raiz == null){
 			raiz = new Nodo(v);
@@ -37,25 +38,28 @@ public class Lista {
 		return -1;
 	}
 	
-	public int[] valores(){
-		int[] valores = new int[indice];
-		Nodo nodoActual = raiz;
-		int pos = 0;
-		while(nodoActual != null){
-			valores[pos] = nodoActual.getValor();
-			nodoActual = nodoActual.getSiguiente();
-			pos++;
-		}
-		return valores;
-	}
+//	public int[] valores(){
+//		int[] valores = new int[indice];
+//		Nodo nodoActual = raiz;
+//		int pos = 0;
+//		while(nodoActual != null){
+//			valores[pos] = nodoActual.getValor();
+//			nodoActual = nodoActual.getSiguiente();
+//			pos++;
+//		}
+//		return valores;
+//	}
 	
 	public void eliminar(int pos){
 		Nodo nodoActual = raiz;
-		while(nodoActual != null){
-			if (pos == 0) {
-				Nodo temp = nodoActual.getSiguiente();
-				nodoActual.setSiguiente(temp.getSiguiente());
-				return;
+		if(pos == 0){
+			raiz = nodoActual.getSiguiente();
+		}
+		while(nodoActual != null && pos > 0){
+			if (pos == 1) {
+				Nodo temp = nodoActual.getSiguiente(); //cuando encontramos el nodo anterior al que queremos eliminar 
+				nodoActual.setSiguiente(temp.getSiguiente());// seteamos su nodo siguiente con el siguiente de el que 
+				return;										// queremos eliminar.
 			}
 			pos --;
 			nodoActual = nodoActual.getSiguiente();

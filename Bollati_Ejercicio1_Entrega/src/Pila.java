@@ -14,6 +14,15 @@ public class Pila {
 	public void apilar(int v){
 		lista.agregar(v);
 	}
+	
+//	public void imprimir(){
+//		int [] arr = lista.valores();
+//		for (int i = 0; i < arr.length; i++) {
+//			System.out.print(lista.elementoEnPos(i)+ " ");
+//		}
+//		System.out.println();
+//	}
+	
 	public int desapilar(){
 		if(!lista.vacio()){
 			int val = lista.elementoEnPos(0);
